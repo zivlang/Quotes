@@ -3,15 +3,9 @@ package com.example.seinfeldquotes.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Quote implements Parcelable {
+import org.jetbrains.annotations.NotNull;
 
-    public static final String TABLE_NAME = "movies";
-    public static final String ID = "season";
-    public static final String TITLE = "quote";
-    public static final String IMAGE_URL = "quotedCharacter";
-    public static final String RATING = "rating";
-    public static final String RELEASE_YEAR = "releaseYear";
-    public static final String GENRE = "genre";
+public class Quote implements Parcelable {
 
     private static Quote currentQuote;
 
@@ -57,13 +51,13 @@ public class Quote implements Parcelable {
         return quotedCharacter;
     }
 
-
+    @NotNull
     @Override
     public String toString() {
         return "Quote{" +
-                "season=" + season +
-                ", quote='" + quote + '\'' +
-                ", quotedCharacter='" + quotedCharacter +
+                "quote='" + quote + '\'' +
+                ", season=" + season +
+                ", quotedCharacter='" + quotedCharacter + '\'' +
                 '}';
     }
 

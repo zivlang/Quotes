@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Quote> quotesList = this.getInt
-        ent().getParcelableArrayListExtra("quotesList");
+        ArrayList<Quote> quotesList = this.getIntent().getParcelableArrayListExtra("quotesList");
         Bundle listBundle = new Bundle();
         listBundle.putParcelableArrayList("quotesList", quotesList);
 

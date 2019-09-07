@@ -117,8 +117,6 @@ public class SplashActivity extends AppCompatActivity {
         Intent intent = new Intent(SplashActivity.this, MainActivity.class);
         intent.putParcelableArrayListExtra("quotesList", quotesList);
 
-        Log.d("Monitoring", quotesList.toString());
-
         startActivity(intent);
         finish();
     }

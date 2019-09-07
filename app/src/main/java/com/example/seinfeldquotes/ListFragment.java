@@ -22,8 +22,6 @@ import static android.content.ContentValues.TAG;
 
 public class ListFragment extends Fragment {
 
-    private Context context;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,7 +29,7 @@ public class ListFragment extends Fragment {
 
         Log.d(TAG, "in ListFragment");
 
-        context = getActivity();
+        Context context = getActivity();
 
         ArrayList<Quote> quotesList;
         QuotesAdapter quotesAdapter;
@@ -45,8 +43,10 @@ public class ListFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         DividerItemDecoration dividerItemDecoration;
-        dividerItemDecoration = new DividerItemDecoration(context, linearLayoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
+        if(context != null) {
+            dividerItemDecoration = new DividerItemDecoration(context, linearLayoutManager.getOrientation());
+            recyclerView.addItemDecoration(dividerItemDecoration);
+        }
 
         recyclerView.setAdapter(quotesAdapter);
 
